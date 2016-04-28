@@ -24,3 +24,5 @@ This system have below:
 |OS|Scientific Linux|
 |Ruby|2.3.0|
 |Rails|4.2.6|
+|rspec|3.4.2|
+|capybara|2.7.0|
