@@ -1,7 +1,7 @@
 class CreateMembers < ActiveRecord::Migration
   def change
     create_table :members do |t|
-      t.string :name.string
+      t.string :name
 
       t.timestamps null: false
     end
