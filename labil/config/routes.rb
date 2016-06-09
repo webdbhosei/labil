@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  get 'registrations/index'
-
-  get 'registrations/regist'
-
-  get 'topviews/index'
-  get 'registrations/sellect2'
-
-  get 'registrations/hello'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

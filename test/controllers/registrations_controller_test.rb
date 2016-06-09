@@ -1,13 +1,13 @@
 require 'test_helper'
 
 class RegistrationsControllerTest < ActionController::TestCase
-  test "should get sellect1" do
-    get :sellect1
+  test "should get index" do
+    get :index
     assert_response :success
   end
 
-  test "should get sellect2" do
-    get :sellect2
+  test "should get regist" do
+    get :regist
     assert_response :success
   end
 
