@@ -5,4 +5,4 @@
 ### up to now, the following tasks have been done.
 	* locations table, statuses table had been added.  <-- Takuma
 	* registration view had been written <-- Fuko
-
+	* add location table and some sample models <-- Fuko
