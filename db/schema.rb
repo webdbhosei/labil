@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608113733) do
+ActiveRecord::Schema.define(version: 20160615010653) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
