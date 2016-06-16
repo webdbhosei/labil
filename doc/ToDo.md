@@ -6,4 +6,5 @@
 	* We need locations table. --> Fuko
 	* We need members table. --> Masahiro
 	* It is released to see the TopView --> Erisa
-
+	* Implement detectLocation method --> Kazunori
+	* Think of the IP detection logic --> Kazunori
