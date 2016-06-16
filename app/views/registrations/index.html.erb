@@ -1,29 +1,16 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag    "index", :media => "all" %>
+<h1>ima, dokoniiru?</h1>
 
-<h1>Listing Registrations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Lab</th>
-      <th>String</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @registrations.each do |registration| %>
-      <tr>
-        <td><%= registration.lab %></td>
-        <td><%= registration.string %></td>
-        <td><%= link_to 'Show', registration %></td>
-        <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
-        <td><%= link_to 'Destroy', registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Registration', new_registration_path %>
+<!--<p>Find me in app/views/registrations/index.html.erb</p>-->
+<p>
+	<% i = 0%>
+	<% colors = ['red', 'green', 'blue']%>
+	<% for location in @locations %>
+		<input type = "button" value = <%=location.name %>  class="btn" style = "width: 200px;height: 150px; font-size:1.8em; background: <%= colors[i]%>; color:white;">
+		<%i = i + 1%>
+	<% end %>
+		
+	<!--<% @locations.each do |location| %>
+	<input type = "button" value = <%=location.name %>  style = "width: 100px;height: 50px;background: red">
+	<% end %>-->
+</p>
