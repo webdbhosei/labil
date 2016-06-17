@@ -6,5 +6,5 @@
 	* locations table, statuses table had been added.  <-- Takuma
 	* registration view had been written <-- Fuko
 	* add location table and some sample models <-- Fuko
-  * add authentication by devise, and modify members <-- Masahiro
+	* add authentication by devise, and modify members <-- Masahiro
 
