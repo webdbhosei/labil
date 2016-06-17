@@ -19,12 +19,6 @@ ActiveRecord::Schema.define(version: 20160615010653) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "members", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "messages", force: :cascade do |t|
     t.integer  "member_id"
     t.string   "message"
@@ -49,9 +43,8 @@ ActiveRecord::Schema.define(version: 20160615010653) do
   end
 
   create_table "statuses", force: :cascade do |t|
-    t.integer  "uesr_id"
+    t.integer  "member_id"
     t.integer  "location_id"
-    t.string   "status"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
