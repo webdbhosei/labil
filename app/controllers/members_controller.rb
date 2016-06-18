@@ -4,27 +4,38 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
+    confirm_registered_member()
+    only_admin()
     @members = Member.all
   end
 
   # GET /members/1
   # GET /members/1.json
   def show
+    confirm_registered_member()
   end
 
   # GET /members/new
   def new
+    if Member.exists?(user_id: current_user.id)
+      redirect_to :root, alert: "already registered in member!"
+    end
     @member = Member.new
   end
 
   # GET /members/1/edit
   def edit
+    confirm_registered_member()
+    if user_signed_in? && !(@member.user_id == current_user.id || current_user.id == 1)
+      redirect_to :root
+    end
   end
 
   # POST /members
   # POST /members.json
   def create
     @member = Member.new(member_params)
+    @member.user_id = current_user.id
 
     respond_to do |format|
       if @member.save
@@ -69,6 +80,6 @@ class MembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:name, :user_id)
+      params.require(:member).permit(:name)
     end
 end
