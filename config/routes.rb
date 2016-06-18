@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :members
   resources :messages
   get 'registrations/index'
   get 'registrations/regist'
