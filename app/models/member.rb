@@ -1,3 +1,3 @@
 class Member < ActiveRecord::Base
-  has_many :messages
+  has_one :user
 end

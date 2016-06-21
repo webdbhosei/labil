@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
+  resources :members
   resources :messages
   get 'registrations/index'
-
   get 'registrations/regist'
 
   get 'topviews/index'
   get 'registrations/sellect2'
 
   get 'registrations/hello'
+
+  devise_for :users
+
+  root to: "topviews#index"
+
+  match ':controller(/:action(/:id))', via:[:get, :post, :patch]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
