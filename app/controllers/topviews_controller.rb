@@ -1,5 +1,8 @@
 class TopviewsController < ApplicationController
-  before_action :confirm_registered_member 
   def index
+    @statuses = Status.all
+    @members = Member.all
+    @locations = Location.all
+    @messages = Message.all
   end
 end
