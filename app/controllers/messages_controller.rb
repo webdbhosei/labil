@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
@@ -25,7 +26,8 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-
+    @message.member_id = current_user.id
+    
     respond_to do |format|
       if @message.save
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
@@ -55,7 +57,7 @@ class MessagesController < ApplicationController
   # DELETE /messages/1.json
   def destroy
     @message.destroy
-    respond_to do |format|
+    respond_to do |format|      
       format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
       format.json { head :no_content }
     end
