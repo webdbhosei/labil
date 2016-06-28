@@ -3,6 +3,11 @@ Location.create( name: 'zaishitsu')
 Location.create( name: 'gaishutsu')
 Location.create( name: 'kitaku')
 
+Member.create( name: 'Abe')
+Member.create( name: 'Ito')
+Member.create( name: 'Sato')
+Member.create( name: 'Suzuki')
+
 ActiveRecord::Base.transaction do
 location = Location.last
 member = Member.new(name: "test")
