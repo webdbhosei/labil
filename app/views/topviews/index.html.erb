@@ -24,7 +24,8 @@
 				<td><%= @locations.find(status.location_id).name %></td>
 				<td>
 				<button type="button" class="btn btn-default" data-toggle="popover" title="memo" data-content= <%= @messages.find_by(member_id: status.member_id).message %>>
-					<%= image_tag "/assets/icon.png", :size => '10x10' %>
+					<!--%= image_tag "/assets/icon.png", :size => '10x10' %-->
+          <i class="fa fa-comment-o"></i>
 				</button>
 				<script>
 					$(function() {
