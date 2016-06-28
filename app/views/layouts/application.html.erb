@@ -51,6 +51,11 @@
             <li><%= link_to "Link1", "/path1"  %></li>
             <li><%= link_to "Link2", "/path2"  %></li>
             <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "signin", signin_path  %></li>
+            <li><%= link_to "signout", signout_path, method: "delete"  %></li>
+            <% if signed_in? %>
+            <li><%= current_member.name %></li>
+            <% end %>
           </ul>
         </div>
       </div>

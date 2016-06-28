@@ -22,7 +22,7 @@ Location.create( :name=> '藤田研', :category=> '2')
 
 ActiveRecord::Base.transaction do
 location = Location.last
-member = Member.new(name: "test", password:"0000", password_confirmation: "0000")
+member = Member.new(name: "test", email: "test@test.com", password:"0000", password_confirmation: "0000")
 member.save!
 member = Member.find_by_name("test")
 status = Status.new(member_id: member.id, location_id: location.id)

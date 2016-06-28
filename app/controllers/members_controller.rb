@@ -28,6 +28,8 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       if @member.save
+        sign_in @member
+        #redirect_to @member
         format.html { redirect_to @member, notice: 'Member was successfully created.' }
         format.json { render :show, status: :created, location: @member }
       else
@@ -69,6 +71,14 @@ class MembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:name, :password, :password_confirmation)
+      params.require(:member).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def member_item_params
+      params.require(:member).permit(:name, :email)
+    end
+
+    def member_password_params
+      params.require(:member).permit(:password, :password_confirmation)
     end
 end
