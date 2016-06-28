@@ -17,6 +17,11 @@ Location.create( :name=> '小池(崇)研', :category=> '2')
 Location.create( :name=> '藤田研', :category=> '2')
 =======
 
+Member.create( name: 'Abe')
+Member.create( name: 'Ito')
+Member.create( name: 'Sato')
+Member.create( name: 'Suzuki')
+
 ActiveRecord::Base.transaction do
 location = Location.last
 member = Member.new(name: "test")
