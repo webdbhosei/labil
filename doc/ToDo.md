@@ -9,3 +9,6 @@
 	
 	* I will think about schedule table again and make its some models. -->Shohei
 	* We need to discuss about elements in schedule.  -->Shohei
+	* Implement detectLocation method --> Kazunori
+	* Think of the IP detection logic --> Kazunori
+	* I will think about personal schedule view. --> Naoyuki

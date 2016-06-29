@@ -1,13 +1,25 @@
 Rails.application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :members
   resources :messages
-  get 'registrations/index'
 
+  match '/signup', to:'members#new',    via: 'get'
+  match '/signin', to:'sessions#new',    via: 'get', as: 'signin'
+  match '/signout', to:'sessions#destroy',    via: 'delete', as: 'signout'
+
+  get 'registrations/index'
   get 'registrations/regist'
 
   get 'topviews/index'
   get 'registrations/sellect2'
 
   get 'registrations/hello'
+
+  root to: "topviews#index"
+
+
+  match ':controller(/:action(/:id))', via:[:get, :post, :patch]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
