@@ -5,7 +5,6 @@ class SchedulesControllerTest < ActionController::TestCase
     @schedule = schedules(:one)
   end
   
-  
   test "should get index" do
     get :index
     assert_response :success
@@ -17,6 +16,19 @@ class SchedulesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should create schedule" do
+    assert_difference('Schedule.count') do
+      post :create, schedule: { event_end: @schedule.event_end, event_start: @schedule.event_start, member_id: @schedule.member_id, venue: @schedule.venue }
+    end
+
+    assert_redirected_to schedule_path(assigns(:schedule))
+  end
+
+  test "should show schedule" do
+    get :show, id: @schedule
+    assert_response :success
+  end
+    
   test "should get show" do
     get :show, id: @schedule
     assert_response :success
@@ -42,7 +54,6 @@ class SchedulesControllerTest < ActionController::TestCase
     assert_difference('Schedule.count', -1) do
       delete :destroy, id: @schedule
     end
-    
     assert_redirected_to schedules_path
   end
 end
