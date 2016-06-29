@@ -70,7 +70,7 @@ class SchedulesController < ApplicationController
     end
 
     def schedule_params
-      params.require(:start_time, :end_time, :venue).permit(:member_id, :start_time, :end_time, :venue)
+      params.require(:event_start, :event_end, :venue).permit(:member_id, :event_start, :event_end, :venue)
     end
   
 end
