@@ -88,7 +88,7 @@ class SchedulesController < ApplicationController
     end
 
     def schedule_params
-      params.require(:event_start, :event_end, :venue).permit(:member_id, :event_start, :event_end, :venue)
+      params.require(:schedule).permit(:member_id, :event_start, :event_end, :venue)
     end
   
     # Never trust parameters from the scary internet, only allow the white list through.
